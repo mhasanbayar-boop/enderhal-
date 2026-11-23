@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ender Halı & Çeyiz Mağazası</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+ 
+
+  <!-- Üst Menü -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="brand-logo">
+        <strong id="navStoreName">ENDER HALI</strong>
+        <span>ÇEYİZ MAĞAZASI</span>
+      </a>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn btn-outline" title="Tema Değiştir">🌙 Koyu Tema</button>
+        <a id="headerWaBtn" href="#" target="_blank" class="wa-icon-btn" title="WhatsApp İletişim" aria-label="WhatsApp İletişim">
+  <svg viewBox="0 0 32 32" width="22" height="22" fill="currentColor" aria-hidden="true">
+    <path d="M16.004 3C8.832 3 3 8.832 3 16.004c0 2.295.6 4.535 1.737 6.51L3 29l6.654-1.703a12.94 12.94 0 0 0 6.35 1.663h.005C23.176 28.96 29 23.128 29 15.956 29 8.832 23.176 3 16.004 3zm7.588 18.41c-.318.898-1.86 1.72-2.57 1.825-.66.098-1.5.14-2.42-.152-.56-.178-1.278-.415-2.196-.812-3.864-1.668-6.386-5.57-6.58-5.826-.193-.257-1.572-2.092-1.572-3.99 0-1.898.994-2.83 1.347-3.216.353-.386.77-.482 1.027-.482.257 0 .514.003.738.014.236.012.553-.09.865.66.32.77 1.09 2.66 1.186 2.853.096.193.16.418.032.675-.128.257-.193.418-.385.643-.193.225-.405.502-.578.675-.193.192-.393.402-.17.787.225.386 1 1.648 2.146 2.67 1.474 1.314 2.717 1.722 3.102 1.915.386.193.61.16.835-.096.225-.257.963-1.124 1.22-1.51.257-.385.514-.32.866-.192.353.128 2.248 1.06 2.633 1.252.385.193.642.29.738.45.097.16.097.93-.22 1.828z"/>
+  </svg>
+</a>
+      </div>
+    </div>
+  </header>
+   <!-- Kayan Duyuru Barı (Yönetimden tamamen kontrol edilir) -->
+  <div id="marqueeBar" class="marquee-bar" style="display: none;">
+    <div id="marqueeTrack" class="marquee-track"></div>
+  </div>
+
+  <!-- Vitrin / Güven Alanı -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="trust-pill">✨ Kredi Kartına 6 Aya Varan Taksit İmkanı</div>
+        <h1>Evinizin Zarafeti İçin Seçkin Halı & Çeyiz Koleksiyonu</h1>
+        <p>Türkiye'nin lider halı ve ev tekstili markalarının orijinal, garantili ürünleri Ender Halı Çeyiz güvencesiyle kapınızda. Beğendiğiniz ürünü tek tıkla WhatsApp'tan sipariş verin.</p>
+        <a href="#urunler" class="btn btn-primary" style="padding: 13px 26px;">Ürünleri İncele ↓</a>
+      </div>
+      <div class="hero-badges">
+        <div class="trust-card">
+          <strong>%100 Orijinal Ürün</strong>
+          <span>Yetkili bayi garantisiyle güvenilir alışveriş.</span>
+        </div>
+        <div class="trust-card">
+          <strong>6 Taksit İmkanı</strong>
+          <span>Tüm kredi kartlarına uygun ödeme kolaylığı.</span>
+        </div>
+        <div class="trust-card">
+          <strong>Hızlı WhatsApp Sipariş</strong>
+          <span>Üyelik beklemeden anında stok ve fiyat teyidi.</span>
+        </div>
+        <div class="trust-card">
+          <strong>Mağaza Güvencesi</strong>
+          <span id="heroPhones">0545 348 0699 • 0542 384 9722</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Yetkili Markalar -->
+  <div class="brands-strip">
+    <div class="container brands-list">
+      <span class="brand-pill">ARTEMIS</span>
+      <span class="brand-pill">NEXUS</span>
+      <span class="brand-pill">FLORA</span>
+      <span class="brand-pill">AYSER</span>
+      <span class="brand-pill">DİNARSU</span>
+      <span class="brand-pill">MERİNOS</span>
+    </div>
+  </div>
+
+  <!-- Ürün Kataloğu -->
+  <main id="urunler" class="container catalog-section">
+    <div class="filter-bar">
+      <div id="categoryTabs" class="category-tabs"></div>
+      <input type="text" id="searchInput" class="search-input" placeholder="Ürün, marka veya ölçü ara...">
+    </div>
+    <div id="productGrid" class="product-grid"></div>
+  </main>
+
+  <!-- Alt Bilgi -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Ender Halı & Çeyiz Mağazası</h4>
+          <p>Seçkin halı markaları ve özenle hazırlanmış çeyiz setleriyle yıllardır güvenle hizmetinizdeyiz.</p>
+        </div>
+        <div>
+          <h4>Hızlı İletişim</h4>
+          <a id="footerPhone1" href="tel:05453480699">📞 0545 348 0699</a>
+          <a id="footerPhone2" href="tel:05423849722">📞 0542 384 9722</a>
+        </div>
+        
+      </div>
+      <div class="footer-bottom">
+        © <span id="year"></span> Ender Halı Çeyiz Mağazası — Tüm Hakları Saklıdır.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

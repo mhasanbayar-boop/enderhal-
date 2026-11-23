@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yönetim Paneli — Ender Halı & Çeyiz</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="brand-logo">
+        <strong>ENDER HALI</strong>
+        <span>YÖNETİM PANELİ</span>
+      </a>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn btn-outline">🌙 Koyu Tema</button>
+        <a href="/" target="_blank" class="btn btn-outline">🌐 Siteyi Gör</a>
+        <button id="logoutBtn" class="btn btn-danger" style="display:none;">Çıkış</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Giriş Ekranı -->
+  <div id="loginSection" class="container">
+    <div class="login-box">
+      <h2 style="margin-bottom: 16px;">Yönetici Girişi</h2>
+      <div class="form-group">
+        <label>Yönetim Şifresi</label>
+        <input type="password" id="passwordInput" class="form-control" placeholder="Şifrenizi girin">
+      </div>
+      <button id="loginBtn" class="btn btn-primary" style="width:100%;">Giriş Yap</button>
+      <p id="loginError" style="color: var(--danger); font-size:0.88rem; margin-top:10px;"></p>
+    </div>
+  </div>
+
+  <!-- Ana Panel -->
+  <main id="dashboardSection" class="container admin-wrap" style="display:none;">
+    
+    <!-- 1. Kayan Bar & WhatsApp Ayarları -->
+    <section class="panel-card">
+      <h2>📢 Kayan Duyuru Barı & WhatsApp Ayarları</h2>
+      
+      <!-- Canlı Önizleme -->
+      <div style="margin-bottom: 18px;">
+        <label style="font-size:0.82rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:6px;">CANLI ÖNİZLEME:</label>
+        <div id="previewMarquee" class="marquee-bar" style="border-radius: 10px;">
+          <div id="previewTrack" class="marquee-track"></div>
+        </div>
+      </div>
+
+      <form id="settingsForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Kayan Bar Durumu</label>
+            <select id="marqueeActive" class="form-control">
+              <option value="true">Aktif (Görünsün)</option>
+              <option value="false">Pasif (Gizle)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Arka Plan Rengi</label>
+            <input type="color" id="marqueeBg" class="form-control" style="height:44px; padding:4px;">
+          </div>
+          <div class="form-group">
+            <label>Yazı Rengi</label>
+            <input type="color" id="marqueeText" class="form-control" style="height:44px; padding:4px;">
+          </div>
+          <div class="form-group">
+            <label>Kayma Hızı: <span id="speedLabel">25</span> sn (Küçük = Hızlı)</label>
+            <input type="range" id="marqueeSpeed" min="8" max="60" value="25" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>1. Kayan Metin</label>
+          <input type="text" id="marqueeText1" class="form-control" placeholder="Örn: Kredi Kartına 6 Aya Varan Taksit İmkanı!">
+        </div>
+        <div class="form-group">
+          <label>2. Kayan Metin</label>
+          <input type="text" id="marqueeText2" class="form-control" placeholder="Örn: Yeni Sezon Halılarda %25 İndirim!">
+        </div>
+        <div class="form-group">
+          <label>3. Kayan Metin</label>
+          <input type="text" id="marqueeText3" class="form-control" placeholder="Örn: Merinos, Dinarsu, Artemis Yetkili Bayisi">
+        </div>
+
+        <hr style="border:none; border-top:1px solid var(--border); margin: 20px 0;">
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>WhatsApp Sipariş Numarası (Başında 90 ile, boşluksuz)</label>
+            <input type="text" id="whatsappNumber" class="form-control" placeholder="905453480699">
+          </div>
+          <div class="form-group">
+            <label>Görünen Telefon 1</label>
+            <input type="text" id="phone1" class="form-control" placeholder="0545 348 0699">
+          </div>
+          <div class="form-group">
+            <label>Görünen Telefon 2</label>
+            <input type="text" id="phone2" class="form-control" placeholder="0542 384 9722">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">💾 Ayarları Kaydet</button>
+      </form>
+    </section>
+
+    <!-- 2. Ürün Ekle / Düzenle -->
+    <section class="panel-card">
+      <h2 id="productFormTitle">➕ Yeni Ürün Ekle</h2>
+      <form id="productForm">
+        <input type="hidden" id="editProductId">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Ürün Adı *</label>
+            <input type="text" id="pName" class="form-control" required placeholder="Örn: Merinos Royal Halı">
+          </div>
+          <div class="form-group">
+            <label>Marka</label>
+            <input type="text" id="pBrand" class="form-control" placeholder="Merinos, Artemis, Dinarsu...">
+          </div>
+          <div class="form-group">
+            <label>Kategori</label>
+            <select id="pCategory" class="form-control">
+              <option value="Halı">Halı</option>
+              <option value="Çeyiz Seti">Çeyiz Seti</option>
+              <option value="Yatak Örtüsü">Yatak Örtüsü</option>
+              <option value="Nevresim Takımı">Nevresim Takımı</option>
+              <option value="Yolluk">Yolluk</option>
+              <option value="Battaniye & Pike">Battaniye & Pike</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Ölçü / Ebat</label>
+            <input type="text" id="pSize" class="form-control" placeholder="Örn: 200 x 290 cm">
+          </div>
+          <div class="form-group">
+            <label>Satış Fiyatı (₺) *</label>
+            <input type="number" id="pPrice" class="form-control" required placeholder="6750">
+          </div>
+          <div class="form-group">
+            <label>Eski Fiyat (İndirimli göstermek için)</label>
+            <input type="number" id="pOldPrice" class="form-control" placeholder="8500">
+          </div>
+          <div class="form-group">
+            <label>Etiket (Rozet)</label>
+            <input type="text" id="pBadge" class="form-control" placeholder="İndirim, Yeni, Kampanya">
+          </div>
+          <div class="form-group">
+            <label>Ürün Fotoğrafı Yükle (JPG, PNG, WEBP)</label>
+            <input type="file" id="pImageFile" accept="image/*" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Açıklama</label>
+          <textarea id="pDesc" rows="3" class="form-control" placeholder="Ürün özellikleri, dokuma türü, yıkama bilgisi..."></textarea>
+        </div>
+
+        <div style="display:flex; gap:10px;">
+          <button type="submit" id="saveProductBtn" class="btn btn-primary">✅ Ürünü Kaydet</button>
+          <button type="button" id="cancelEditBtn" class="btn btn-outline" style="display:none;">İptal</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- 3. Mevcut Ürünler Listesi -->
+    <section class="panel-card">
+      <h2>📦 Kayıtlı Ürünler (<span id="productCount">0</span>)</h2>
+      <div id="adminProductList"></div>
+    </section>
+
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

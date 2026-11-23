@@ -1,0 +1,57 @@
+{
+  "settings": {
+    "storeName": "ENDER HALI & ÇEYİZ MAĞAZASI",
+    "whatsappNumber": "905453480699",
+    "phone1": "0545 348 0699",
+    "phone2": "0542 384 9722",
+    "marquee": {
+      "active": true,
+      "bgColor": "#4d52a3",
+      "textColor": "#ffffff",
+      "speed": 28,
+      "texts": [
+        "KREDİ KARTINA 6 AYA VARAN TAKSİT İMKANI!",
+        "ARTEMIS • MERİNOS • DİNARSU • FLORA • AYSER • NEXUS YETKİLİ BAYİSİ",
+        "YENİ SEZON HALI VE ÇEYİZ SETLERİNDE BÜYÜK İNDİRİM FIRSATI!"
+      ]
+    }
+  },
+  "products": [
+    {
+      "id": "p1",
+      "name": "Merinos Royal Salon Halısı",
+      "brand": "Merinos",
+      "category": "Halı",
+      "size": "200 x 290 cm (6 m²)",
+      "oldPrice": 8500,
+      "price": 6750,
+      "badge": "İndirim",
+      "description": "Yumuşak dokulu, tozuma yapmayan, leke tutmaz özel seri modern salon halısı.",
+      "image": "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "p2",
+      "name": "Artemis Vintage Dokuma Halı",
+      "brand": "Artemis",
+      "category": "Halı",
+      "size": "160 x 230 cm (4 m²)",
+      "oldPrice": 6200,
+      "price": 4990,
+      "badge": "Yeni Sezon",
+      "description": "Klasik ve modern çizgileri birleştiren, pamuk tabanlı yüksek kalite dokuma.",
+      "image": "https://images.unsplash.com/photo-1575414003591-ece8d0416c7a?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "p3",
+      "name": "Lüks 12 Parça Gelin Çeyiz Seti",
+      "brand": "Özel Seri",
+      "category": "Çeyiz Seti",
+      "size": "Çift Kişilik",
+      "oldPrice": 11500,
+      "price": 8950,
+      "badge": "Kampanya",
+      "description": "Fransız güpürlü yatak örtüsü, saten nevresim takımı, battaniye ve dekoratif kırlentler dahil.",
+      "image": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80"
+    }
+  ]
+}
